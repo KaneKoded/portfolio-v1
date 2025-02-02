@@ -17,6 +17,6 @@ This repo contains the source code for my portfolio website project.
 * [Vite](https://vite.dev/) 
 
 ## License
-This project is licensed under the Apache License - see the [LICENSE.md](/../main/LICENSE.md?raw=true) file for details.
+This project is licensed under the Apache License - see the [LICENSE.md](/../main/LICENSE) file for details.
 
 

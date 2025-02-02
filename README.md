@@ -2,9 +2,10 @@
 ![Desktop size screenshot of my responsive portfolio website](/../main/portfolio-screenshot.png?raw=true)  
 
 # Lisa Kane - portfolio website  
-[Visit Website](https://kanekoded.com/)  
+To see it in action visit [kanekoded.com](https://kanekoded.com/)  
 
-This repo contains the source code for my portfolio website project. Note: Some images and sensitive information have been removed.
+This repo contains the source code for my portfolio website project. 
+Note: Sensitive .env info has been removed.
 
 ## Built With 
 
@@ -20,13 +21,17 @@ This repo contains the source code for my portfolio website project. Note: Some 
 ## License
 This project is licensed under the Apache License - see the [LICENSE.md](/../main/LICENSE) file for details.
 
+## Author 
+Lisa Kane 
+
 ## Acknowledgments  
 Special thanks to:  
 
 * [Google Fonts](https://fonts.google.com/) 
-* [Linear Icons](https://linearicons.com/) 
-* [React Icons](https://react-icons.github.io/react-icons/)
+* [Linear Icons](https://linearicons.com/)
 * [Pngtree](https://pngtree.com/)
+* [React Icons](https://react-icons.github.io/react-icons/)
+
 
 
 

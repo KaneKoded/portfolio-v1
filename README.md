@@ -5,7 +5,7 @@
 To see it in action visit [kanekoded.com](https://kanekoded.com/)  
 
 This repo contains the source code for my portfolio website project. 
-Note: Sensitive .env info has been removed.
+Note: Sensitive .env info and company logo images have been removed.
 
 ## Built With 
 

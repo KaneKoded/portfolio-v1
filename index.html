@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Lisa Kane - Portfolio</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Linear Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /** loader **/
+      .loader-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #171717;
+        overflow: hidden;
+        z-index: 9999;
+      }
+
+      .loader {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        border-top: 8px solid rgb(82, 54, 97);
+        border-right: 8px solid transparent;
+        box-sizing: border-box;
+        animation: spin-rotate 1s linear infinite;
+      }
+
+      .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border-bottom: 8px solid rgb(44, 115, 134);
+        border-left: 8px solid transparent;
+      }
+
+      .loader-hide {
+        animation: fade-away 0.3s forwards;
+      }
+
+      @keyframes spin-rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fade-away {
+        0% {
+          opacity: 1;
+        }
+        99% {
+          opacity: 0;
+        }
+        100% {
+          display: none;
+          z-index: -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div class="loader-wrapper"><div class="loader"></div></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

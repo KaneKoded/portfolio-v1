@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scrollbar-width: thin;
+        font-size: 17px;
+    }
+
+    body {
+        @apply antialiased font-Roboto font-normal text-neutral-600 overflow-x-hidden bg-black;
+    }
+
+    section {
+        @apply relative top-0 flex-1;     
+    }
+
+    p {
+        @apply leading-[1.6rem] py-3 max-w-[800px] lg:max-w-[850px] sm:leading-normal;
+    }
+   
+}
+
+@layer components { 
+    
+    header.active {
+        @apply top-0 drop-shadow-active-header 
+        md:bg-black md:transition md:ease-linear md:duration-700 md:opacity-90 
+        xl:opacity-100;
+    }
+
+    .navbar {
+        @apply fixed top-0 left-0 right-0 w-screen h-0 overflow-hidden z-40 bg-gradient-pattern 
+        transition-all duration-500 opacity-0 
+        md:static md:bg-none md:opacity-100 md:h-full  
+        xl:mx-auto xl:pl-4 xl:pr-6;
+    }
+    
+    /*mobile menu*/
+    .navbar.active {
+        @apply flex flex-col justify-center w-screen h-screen opacity-100 border-b-2 border-b-transparent;
+    }
+
+    /*mobile menu*/
+    .navbar.active .nav-link {
+         @apply relative z-40 inline-block my-3 py-4 xxs:mt-3 xxs:py-4 sm:py-5 w-full   
+         transition duration-500 hover:opacity-100 hover:scale-110 
+         opacity-50;
+    }
+
+    /*mobile menu*/
+    .navbar.active .nav-link.active {
+        @apply opacity-100 drop-shadow-sm;
+    }
+
+    /*all menu links*/
+    .nav-link {
+        @apply text-[1.5rem] no-underline text-white font-Montserrat font-medium uppercase tracking-wide  
+        xxs:text-lg sm:text-xl  
+         md:mx-4 md:px-4 md:py-2 md:opacity-55 md:text-[13px] md:font-normal md:transition md:duration-500 md:hover:opacity-100 
+         lg:mx-8;
+    }
+
+    .nav-link.active {
+        @apply opacity-100;
+    }
+
+}
+
+@layer utilities {
+    
+    .bokah-box {
+        @apply relative top-[32px] left-[58px] w-[200px] h-[200px] z-[4] bg-transparent;
+    }
+
+    .btn {
+        @apply inline-block my-1 mr-1 px-4 py-3 text-lg md:text-sm text-white text-center   
+        no-underline uppercase font-Montserrat tracking-wider border-2 border-transparent sm:border-[#606060] rounded-sm 
+        shadow-none cursor-pointer hover:border-2 hover:border-transparent;
+    }
+
+    .btn-cyan {
+        @apply bg-brand-cyan sm:bg-transparent hover:bg-brand-cyan;
+    }
+
+    .btn-purple {
+        @apply bg-brand-purple sm:bg-transparent hover:bg-brand-purple;
+    }
+
+    .btn-reflection {
+        @apply [transition:color_0.0s,_0.15s_border_box-shadow_-webkit-box-reflect_ease-in-out]
+        hover:shadow-[0_5px_45px_rgba(21,21,21,0.9)_,_0_85px_45px_rgba(21,21,21,.9)] 
+        hover:[-webkit-box-reflect:below_2px_linear-gradient(to_bottom,_rgba(21,21,21,0),rgba(21,21,21,0.7))];
+    }
+
+    .round-btn {
+        @apply p-1 w-[49px] h-[49px] inline-flex items-center justify-center rounded-full bg-gradient-pattern  
+        before:transition before:duration-500 before:ease-in-out before:absolute before:bg-white before:rounded-full before:w-[46px] before:h-[46px] hover:before:bg-transparent;
+    }
+
+    .round-btn .icon {
+        @apply relative size-[22px] transition-all duration-500 ease-in-out text-black/70;
+    }
+
+    /* Puzzle */
+    .skills-puzzle-grid {
+        @apply relative grid grid-cols-3 gap-4 w-full h-full rounded-[4px] select-none 
+        transition-all ease-linear duration-300;
+    }
+
+    .skills-puzzle-grid .piece {
+        @apply relative flex justify-center items-center border-0 border-transparent;
+    }
+
+    .skills-puzzle-grid .skill {
+        @apply absolute flex flex-col justify-center items-center w-full h-full text-sm leading-relaxed tracking-normal text-white/80 font-Roboto font-normal z-[10];
+    }
+
+    .skills-puzzle-grid .skill .icon {
+        @apply mt-[5px] text-[32px];
+    }
+
+   .skills-puzzle-grid .piece > span {
+        @apply absolute inline-block w-[30%] h-[30%] rounded-[50%] [transition:border_.4s,z-index_.2s_.1s] ease-linear;
+    }
+
+    .skills-puzzle-grid .piece > .full-top {
+        @apply top-[-20%] left-[35%] bg-inherit border-2 border-transparent z-[2];
+    }
+
+    .skills-puzzle-grid .piece > .full-right {
+        @apply right-[-20%] top-[35%] bg-inherit border-2 border-transparent z-[2];
+    }
+
+    .skills-puzzle-grid .full-bottom {
+        @apply bottom-[-20%] left-[35%] bg-inherit border-2 border-transparent z-[2];
+    }
+
+    .skills-puzzle-grid .full-left {
+        @apply left-[-20%] top-[35%] bg-inherit border-2 border-transparent z-[2];
+    }
+
+    .skills-puzzle-grid .empty-top { 
+        @apply top-[-10%] left-[35%] bg-white z-[1];
+    }
+
+    .skills-puzzle-grid .empty-right {
+        @apply right-[-10%] top-[35%] bg-white z-[1];
+    }
+
+    .skills-puzzle-grid .empty-bottom {
+       @apply bottom-[-10%] left-[35%] bg-white z-[1];
+    }
+
+    .skills-puzzle-grid .empty-left {
+       @apply left-[-10%] top-[35%] bg-white z-[1];
+    } 
+
+    /* Portfolio projects */
+    .portfolio-bg {
+        @apply before:bg-[#e1e3ea] before:bg-img-fixed before:bg-no-repeat before:bg-center before:bg-cover before:w-full before:h-full 
+        before:left-0 before:top-0 before:fixed before:z-[-1];
+    }
+
+   .project-face {
+       @apply absolute top-0 left-0 w-full h-full flex justify-center items-center;
+   }
+
+   .gradient-border {
+        @apply w-fit m-[1px] py-[2px] px-[6px] rounded-full inline-flex items-center justify-center border-2 border-[rgba(0,0,0,0)] 
+        [background:linear-gradient(white,white)_padding-box,linear-gradient(90deg,rgb(44,115,134)_0%,rgb(82,54,97)_100%)_border-box];
+    }
+
+    .gradient-text {
+        @apply block rounded-full font-RobotoCond font-medium text-sm uppercase tracking-wide bg-white 
+         text-neutral-400 bg-gradient-pattern 
+         [-webkit-background-clip:text] [-webkit-text-fill-color:transparent];
+    }
+
+    /*form*/
+    .form-input-wrapper {
+        @apply mb-5 border-b-[1px] border-solid border-white flex;
+    }
+    .form-label {
+        @apply inline-block float-left select-none w-7 text-lg leading-[45px];
+    }
+
+    .form-input {
+        @apply w-[calc(100%-28px)] border-0 appearance-none font-normal text-base font-Roboto bg-transparent py-2 px-1 text-neutral-100 leading-none caret-white  
+        focus:outline-none placeholder:font-light placeholder:text-gray-300 placeholder:font-Roboto;
+    }
+
+    .form-btn {
+        @apply bg-transparent border-2 border-neutral-300 rounded-sm mt-3 mb-5 px-4 py-2 text-sm text-white text-center   
+        uppercase font-Montserrat tracking-wider [transition:.5s] hover:bg-brand-cyan hover:text-white hover:border-transparent; 
+    }  
+    
+}
